@@ -240,14 +240,13 @@ nav a:hover {
 
 .marco-duena {
     width: 250px;
-    height: 250px;
+    height: auto;
     border-radius: 50%;
     background: white;
-    margin: -50px auto 30px;
+    margin: -10px auto 20px; /* Ajuste responsivo */
     position: relative;
     box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
     border: 5px solid white;
-    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -356,7 +355,6 @@ body {
 }
 
 .contenedor-principal, .content {
-    min-width: 1000px;
     transform-origin: center;
     transform: scale(1.0); /* Ajusta según necesidad */
 }
