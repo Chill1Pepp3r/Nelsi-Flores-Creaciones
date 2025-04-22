@@ -59,26 +59,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || 
-           (navigator.userAgent.indexOf('IEMobile') !== -1) ||
-           (window.matchMedia("(max-width: 768px)").matches && 
-            window.matchMedia("(hover: none)").matches);
-  }
-  
-  function showMobileWarning() {
-    if(isMobileDevice()) {
-      document.getElementById('mobile-alert').style.display = 'flex';
+// Detectar móvil y mostrar advertencia
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function showWarning() {
+    const warning = document.getElementById('mobile-warning');
+    if (warning && isMobile() && !localStorage.getItem('hideMobileWarning')) {
+        warning.style.display = 'flex';
     }
-  }
-  
-  function requestDesktopVersion() {
-    document.querySelector('meta[name="viewport"]').content = 'width=1200, initial-scale=1';
-    document.getElementById('mobile-alert').style.display = 'none';
-  }
-  
-  function continueMobile() {
-    document.getElementById('mobile-alert').style.display = 'none';
-  }
-  
-  document.addEventListener('DOMContentLoaded', showMobileWarning);
+}
+
+function closeWarning() {
+    document.getElementById('mobile-warning').style.display = 'none';
+    localStorage.setItem('hideMobileWarning', 'true');
+}
+
+// Mostrar advertencia al cargar
+document.addEventListener('DOMContentLoaded', showWarning);
