@@ -56,3 +56,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // setInterval(mostrarFraseAleatoria, 5000);
 
 });
+
+// Detectar móvil y mostrar advertencia
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function showWarning() {
+    const warning = document.getElementById('mobile-warning');
+    if (warning && isMobile() && !localStorage.getItem('hideMobileWarning')) {
+        warning.style.display = 'flex';
+    }
+}
+
+function closeWarning() {
+    document.getElementById('mobile-warning').style.display = 'none';
+    localStorage.setItem('hideMobileWarning', 'true');
+}
+
+// Mostrar advertencia al cargar
+document.addEventListener('DOMContentLoaded', showWarning);
+
+// Opcional: Enlace para forzar versión desktop
+function requestDesktop() {
+    const url = new URL(window.location.href);
+    url.searchParams.set('desktop', 'true');
+    window.location.href = url.toString();
+}

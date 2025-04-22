@@ -2,11 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!--Solucion temporal para los errores vistos desde moviles-->
-    
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Nelsi Flores Creaciones</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,6 +22,18 @@
         </div>
         <div id="frase-dinamica" class="frase-dinamica"></div>
     </div>
+
+    <div id="mobile-warning" style="display: none;">
+        <div class="warning-content">
+            <p>📱 Estás viendo la versión móvil</p>
+            <p>Para mejor experiencia:</p>
+            <button onclick="requestDesktop()">Ver versión de escritorio</button>
+            <button onclick="closeWarning()" style="background: #ccc; color: #333; margin-top: 10px;">
+                Continuar en móvil
+            </button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
