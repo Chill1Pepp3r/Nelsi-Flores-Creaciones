@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', function() {
     const frases = [
         "¡Donde los sueños se hornear realidad! 🎂",
@@ -55,4 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Opcional: Descomenta para cambio automático cada 5 segundos
     // setInterval(mostrarFraseAleatoria, 5000);
+
 });
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    if(viewportMeta) {
+        viewportMeta.content = "width=1200, user-scalable=yes";
+    }
+    document.body.style.zoom = "80%";
+}
