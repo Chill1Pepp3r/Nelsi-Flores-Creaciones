@@ -23,16 +23,17 @@
         <div id="frase-dinamica" class="frase-dinamica"></div>
     </div>
 
-    <div id="mobile-warning" style="display: none;">
-        <div class="warning-content">
-            <p>📱 Estás viendo la versión móvil</p>
-            <p>Para mejor experiencia:</p>
-            <button onclick="requestDesktop()">Ver versión de escritorio</button>
-            <button onclick="closeWarning()" style="background: #ccc; color: #333; margin-top: 10px;">
-                Continuar en móvil
-            </button>
+    <div id="mobile-alert">
+        <div class="alert-content">
+          <div class="alert-icon">📱</div>
+          <h3>Versión móvil detectada</h3>
+          <p>Para mejor experiencia, activa<br><strong>"Sitio para computadora"</strong></p>
+          <div class="alert-buttons">
+            <button onclick="requestDesktopVersion()">Activar PC</button>
+            <button onclick="continueMobile()">Continuar</button>
+          </div>
         </div>
-    </div>
+      </div>
     
     <script src="script.js"></script>
 </body>
