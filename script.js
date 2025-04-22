@@ -56,11 +56,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // setInterval(mostrarFraseAleatoria, 5000);
 
 });
-
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    const viewportMeta = document.querySelector('meta[name="viewport"]');
-    if(viewportMeta) {
-        viewportMeta.content = "width=1200, user-scalable=yes";
-    }
-    document.body.style.zoom = "80%";
-}
